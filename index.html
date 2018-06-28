@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="font/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<title>mango</title>
+	</head>
+	<body>
+		<!-- 头部  -->
+		<div class="header">
+			<div class="img_box">
+				<img src="img/icon.png"/>
+			</div><div class="text_cont">
+				<span>&nbsp;<span class="icon-icon-test"></span>免费领取“IPhone X手机”,现在去<span class="icon-handoup"></span></span>
+			</div><div class="header_btn">
+				<biv class="btn" onclick="window.location.href='http://www.baidu.com'">立即前往</biv>
+			</div>
+		</div>
+		<!-- 内容 -->
+		<div class="container">
+			<div class="goods_img">
+				<img v-bind:src="imgSrc" alt="mango" />
+			</div><div class="goods_jieshao">
+				<span class="goods_header">
+					<span class="goods_title"><span class="flag"></span>{{ goodsTitle }}</span>
+				</span>
+				<span class="goods_bottom">
+					<span class="goods_num">{{ needNum }}人拼单&nbsp;·&nbsp;已经拼{{ alerdayNum }}件</span>
+					<span class="goods_price">&yen;{{ goodsPrice }}</span><span class="saving">拼单省{{ youCanSave }}元</span>
+				</span>
+			</div>
+			<div class="service" v-on:click="dialgviable=!dialgviable">
+				<ul class="service_ul">
+					<li><span class="icon-gouhao"></span>全场包邮
+					</li><li><span class="icon-gouhao"></span>坏果包赔
+					</li><li><span class="icon-gouhao"></span>果重保证
+					</li><li><span class="jiantou icon-jiantou"></span></li>
+				</ul>
+			</div>
+			<div class="partner">
+				<div class="partner_list_cont">
+					<div class="partner_list">
+						<div class="master">拼主</div>
+						<div class="circle"></div>
+					</div><div class="partner_list">
+						<div class="circle"></div>
+					</div><div class="partner_list">
+						<div class="circle"></div>
+					</div><div class="partner_list">
+						<div class="circle"></div>
+					</div>
+				</div>
+			</div>
+			<div class="count_down">
+				仅剩<span>{{ remainNum }}</span>个名额, 01:37:30:7后结束
+			</div>
+			<div class="join">
+				<div class="join_btn" @click="joinSwitch=!joinSwitch">参与拼单</div>
+				<div class="join_float_cont" v-show="joinSwitch">
+					<div class="join_float_box">
+						<div><h5>长按指纹识别二维码，关注拼多多</h5></div>
+						<div>关注后继续购买，才能接收发货通知</div>
+						<div><img src="img/gif.png"/></div>
+					</div>
+				</div>
+			</div>
+			<div class="notice">
+				<ul class="notice_ul">
+					<li id="notice_title">拼单须知
+					</li><li>
+					</li><li>
+						· 好友拼单
+					</li><li>
+						· 人满发货
+					</li><li>
+						· 人不满退款
+					</li>
+				</ul>
+			</div>
+			
+			<!--弹窗-->
+			<div class="service_float" v-show="dialgviable" >
+				<div class="float_cont">
+					<span class="float_title">
+						<span class="float_exit icon-cha" @click="dialgviable=!dialgviable"></span>
+					</span>
+					<span class="float_list">
+						<span class="fl_1"><span class="icon-gouhao"></span>&nbsp;全场包邮</span>
+						<span class="fl_2">所有商品均无条件包邮</span>
+					</span>
+					<span class="float_list">
+						<span class="fl_1"><span class="icon-gouhao"></span>&nbsp;坏果包赔</span>
+						<span class="fl_2">若收到水果破损腐烂，可获得相应金额的赔偿</span>
+					</span>
+					<span class="float_list">
+						<span class="fl_1"><span class="icon-gouhao"></span>&nbsp;果重保证</span>
+						<span class="fl_2">若收到的水果重量与描述不符，可获得相应金额的赔偿</span>
+					</span>
+					<span class="float_list">
+						<span class="fl_1"><span class="icon-gouhao"></span>&nbsp;48小时发货</span>
+						<span class="fl_2">若超时未发货，商家将补偿3元无门槛代金券</span>
+					</span>
+					<span class="float_list">
+						<span class="fl_1"><span class="icon-gouhao"></span>&nbsp;假一赔十</span>
+						<span class="fl_2">若收到的商品是假冒品牌，可获得加倍赔偿</span>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="nav">
+				<div class="nav_title">
+					<span class="icon-fangzi"></span>首页
+				</div><div class="nav_list_cont">
+					<ul class="nav_list_ul">
+						<li class="nav_list active">推荐</li>
+						<li class="nav_list">男装</li>
+						<li class="nav_list">鞋包</li>
+						<li class="nav_list">手机</li>
+						<li class="nav_list">电器</li>
+						<li class="nav_list">食品</li>
+						<li class="nav_list">百货</li>
+						<li class="nav_list">服饰</li>
+						<li class="nav_list">汽车</li>
+						<li class="nav_list">家装</li>
+						<li class="nav_list">运动</li>
+						<li class="nav_list">母婴</li>
+						<li class="nav_list">水果</li>
+						<li class="nav_list">内衣</li>
+						<li class="nav_list">家纺</li>
+						<li class="nav_list">美妆</li>
+					</ul>
+				</div>
+			</div>
+			
+			<!--商品列表-->
+			<div class="shopping_list">
+				<template v-for="(site,index) in shoppingList">
+					<div class="shopping_cont">
+						<div class="img_cont" :style="{ backgroundImage: 'url('+ site.imgSrc + ')' }">
+							<div v-show="site.hot" class="hot">热卖</div>
+						</div>
+						<div class="list_title"> {{ site.title }} </div>
+						<div class="list_msg_box">
+							<span class="list_price">&yen;
+								<span class="list_price" v-if="site.money"> {{ site.money }} </span>
+								<span class="list_price" v-else> 69.9 </span>
+							</span>
+							<span class="list_already_join" v-if="site.num">已拼 {{ site.num }}件</span>
+							<span class="list_already_join" v-else>已拼2355件</span>
+						</div>
+					</div>
+				</template>	
+			</div>
+			
+			<!--<div v-bind:class="[ index % 2 == 0 ? shopRight : shopLeft , shoppingCont ]">
+				<div class="shop_img"><img v-bind:src="site.imgSrc" /></div>
+				<div class="list_title"> {{ site.title }} </div>
+				<div class="list_msg_box">
+					<span class="list_price">&yen;
+						<span class="list_price" v-if="site.money"> {{ site.money }} </span>
+						<span class="list_price" v-else> 69.9 </span>
+					</span>
+					<span class="list_already_join" v-if="site.num">已拼 {{ site.num }}件</span>
+					<span class="list_already_join" v-else>已拼2355件</span>
+				</div>
+				<div v-show="site.hot" class="hot">热卖</div>
+			</div>-->
+		</div>
+	</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script type="text/javascript">
+	
+	
+	//	service遮罩
+	var vm = new Vue({
+		el: '.container',
+		data: {
+			dialgviable: false,
+			joinSwitch: false,
+			imgSrc: 'img/goods_img.png',
+			goodsTitle:	'【越南进口】玉芒果5斤装  (单果250-600克) | 新鲜水果 皮薄内厚 香甜细腻',
+			needNum : 4,
+			alerdayNum: 212235,
+			goodsPrice: 26.9,
+			youCanSave: 42.1,
+			remainNum: 3,
+		}
+	})
+	
+	//	商品列表
+	var vm_shoppingList = new Vue({
+		el: '.footer',
+		data: {
+			shopRight: 'shop_right',
+			shopLeft: 'shop_left',
+			shoppingCont: 'shopping_cont',
+			shoppingList:[
+			{
+				imgSrc:'img/goods_img.png',
+				title:"【越南进口】玉芒果5斤装  (单果250-600克) | 新鲜水果 皮薄内厚 香甜细腻",
+				money:"88.8",
+				num:2346,
+				hot:true
+			},{
+				imgSrc:"img/goods_img.png",
+				title:"【越南进口】玉芒果5斤装  (单果250-600克) | 新鲜水果 皮薄内厚 香甜细腻",
+//				money:"23.3",
+				num:2346,
+				hot:false
+			},{
+				imgSrc:"img/goods_img.png",
+				title:"【越南进口】玉芒果5斤装  (单果250-600克) | 新鲜水果 皮薄内厚 香甜细腻",
+				money:"33.3",
+//				num:2346,
+				hot:false
+			},{
+				imgSrc:"img/goods_img.png",
+				title:"【越南进口】玉芒果5斤装  (单果250-600克) | 新鲜水果 皮薄内厚 香甜细腻",
+				money:"55.5",
+				num:2346,
+				hot:true
+			},{
+				imgSrc:"img/goods_img.png",
+				title:"【越南进口】玉芒果5斤装  (单果250-600克) | 新鲜水果 皮薄内厚 香甜细腻",
+				money:"642",
+				num:2346,
+				hot:true
+			}]
+		}
+	})
+	
+	
+	
+//	导航栏
+	var nav = document.querySelectorAll('.nav_list');
+	
+	for (var i=0;i<nav.length;i++) {
+		nav[i].onclick = function() {
+			for(var t=0;t<nav.length;t++) {
+				nav[t].className = 'nav_list';
+			}
+			this.className = this.className + ' active';
+		}
+	}
+
+	
+</script>
